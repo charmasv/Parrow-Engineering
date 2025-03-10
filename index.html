@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parrow Engineering - Professional Engineering Services</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.service-card:hover .service-icon { transform: translateY(-5px); }
+.service-card:hover { transform: translateY(-2px); }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2563eb',
+secondary: '#0f172a'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-white min-h-screen">
+<nav class="bg-white shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20">
+<div class="flex items-center">
+<div class="text-3xl font-medium text-primary">Parrow Engineering</div>
+<div class="hidden md:flex items-center ml-10 space-x-8">
+<a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Services</a>
+<a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">About</a>
+<a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Projects</a>
+<a href="#" class="text-gray-900 hover:text-primary px-3 py-2 text-sm font-medium">Contact</a>
+</div>
+</div>
+<div class="flex items-center">
+<button class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Request Quote
+</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="relative bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
+<main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+<div class="text-center lg:text-left">
+<h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+<span class="block">Professional Engineering</span>
+<span class="block text-primary">Solutions & Services</span>
+</h1>
+<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+Specialized in steel fabrication, precision machining, and industrial machine servicing. Your trusted partner for all engineering needs.
+</p>
+<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+<div class="rounded-button shadow">
+<button onclick="showServicesList()" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-button text-white bg-primary hover:bg-primary/90 md:py-4 md:text-lg md:px-10">
+View Services
+</button>
+</div>
+<div id="servicesListModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-semibold text-gray-900">Services List for Parrow Engineering (Pty) Ltd</h3>
+<button onclick="hideServicesList()" class="text-gray-400 hover:text-gray-500">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<h4 class="text-lg font-medium text-primary">Machining Services</h4>
+<ul class="list-disc pl-5 space-y-2 text-gray-600">
+<li>Machining new components (pins, bushes, gears, splined shafts, bolts, nuts, etc.)</li>
+<li>Repair of worn threads and damaged shafts</li>
+<li>Manufacturing hydraulic nuts, shafts, and pins</li>
+<li>Skimming brake drums, brake discs & cylinder heads</li>
+<li>Custom machining and fabrication of specialized components for industrial machines</li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="text-lg font-medium text-primary">Welding & Fabrication</h4>
+<ul class="list-disc pl-5 space-y-2 text-gray-600">
+<li>Welding of cast iron, aluminium, stainless steel & mild steel components</li>
+<li>Fabrication of front loader buckets and industrial machine attachments</li>
+<li>Fabrication of workshop structures (sheds, machine bases, platforms, etc.)</li>
+<li>Boiler repairs & fabrication</li>
+<li>Custom fabrication for plant and equipment (frames, housings, etc.)</li>
+<li>Pipework fabrication (water, air, and hydraulic systems)</li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="text-lg font-medium text-primary">Maintenance & Repairs</h4>
+<ul class="list-disc pl-5 space-y-2 text-gray-600">
+<li>Servicing and repair of industrial machines (conveyors, pumps, mixers, compressors, etc.)</li>
+<li>Hydraulic system repairs (cylinders, valves, hoses, pumps)</li>
+<li>Installation and commissioning of equipment</li>
+<li>Preventive maintenance services (scheduled servicing)</li>
+<li>Troubleshooting and technical advisory services</li>
+<li>Skimming and repairing brake drums, discs, and flywheels </li>
+<li>Cylinder head repairs & reconditioning </li>
+<li>Repair of suspension parts (bushes, pins, arms) </li>
+<li>Manufacturing custom replacement parts for vehicles (bushes, pins, brackets, etc.) </li>
+<li>Welding repairs on vehicle components (exhausts, chassis, etc.) </li>
+<li>Heavy-duty vehicle (trucks & buses) engineering services</li>
+<li>Manufacturing hydraulic hoses & fittings</li>
+<li>Repairing and refurbishing hydraulic cylinders</li>
+<li>Custom hydraulic solutions for agricultural, construction, and industrial equipment</li>
+<li>On-site repairs for machinery and vehicles at client premises</li>
+<li>On-site troubleshooting and diagnostics</li>
+<li>Reverse engineering and manufacturing of obsolete or hard-to-find parts</li>
+<li>Design and prototyping support for special engineering projects</li>
+<li>Recommendations for maintenance planning and equipment upgrades</li>
+<li>Technical consultation for factory upgrades or expansions</li>
+<li>Material selection advice for fabricated parts (best metals for strength, durability, etc.)</li>
+<li>Collection and delivery of jobs </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script>
+function showServicesList() {
+document.getElementById('servicesListModal').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function hideServicesList() {
+document.getElementById('servicesListModal').classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+</script>
+</div>
+<div class="mt-3 sm:mt-0 sm:ml-3">
+<button onclick="showContactInfo()" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-button text-primary bg-primary/10 hover:bg-primary/20 md:py-4 md:text-lg md:px-10">
+Contact Us
+</button>
+<div id="contactInfoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+<div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-semibold text-gray-900">Contact Information</h3>
+<button onclick="hideContactInfo()" class="text-gray-400 hover:text-gray-500">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center">
+<i class="ri-phone-line text-primary text-xl mr-3"></i>
+<div>
+<p class="text-sm text-gray-500">Tel/Fax</p>
+<p class="text-base text-gray-900">(+267) 3500263</p>
+</div>
+</div>
+<div class="flex items-center">
+<i class="ri-mail-line text-primary text-xl mr-3"></i>
+<div>
+<p class="text-sm text-gray-500">Email</p>
+<p class="text-base text-gray-900">parrow@btcmail.co.bw</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function showContactInfo() {
+document.getElementById('contactInfoModal').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function hideContactInfo() {
+document.getElementById('contactInfoModal').classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+</script>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<div class="py-12 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+Our Core Services
+</h2>
+<p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+Comprehensive engineering solutions tailored to your specific needs
+</p>
+</div>
+<div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div class="service-card bg-white overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-lg">
+<div class="px-4 py-5 sm:p-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-tools-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Precision Machining</h3>
+<p class="mt-2 text-sm text-gray-500">
+Custom machining of components including pins, bushes, gears, and specialized parts for industrial machines.
+</p>
+</div>
+</div>
+<div class="service-card bg-white overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-lg">
+<div class="px-4 py-5 sm:p-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-hammer-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Steel Fabrication</h3>
+<p class="mt-2 text-sm text-gray-500">
+Expert fabrication of industrial structures, machine parts, and custom metal components.
+</p>
+</div>
+</div>
+<div class="service-card bg-white overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-lg">
+<div class="px-4 py-5 sm:p-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-flashlight-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Welding Services</h3>
+<p class="mt-2 text-sm text-gray-500">
+Professional welding of cast iron, aluminum, stainless steel & mild steel components.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="lg:text-center">
+<h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+Why Choose Parrow Engineering?
+</h2>
+<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+We combine expertise, quality, and customer service to deliver exceptional engineering solutions.
+</p>
+</div>
+<div class="mt-16">
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-customer-service-2-line text-primary text-3xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Customer-Centric Solutions</h3>
+<p class="mt-2 text-sm text-gray-500">
+Tailored engineering solutions that meet your specific requirements and expectations.
+</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-timer-line text-primary text-3xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Quick Turnaround</h3>
+<p class="mt-2 text-sm text-gray-500">
+Fast and efficient service delivery without compromising on quality.
+</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-shield-check-line text-primary text-3xl"></i>
+</div>
+<h3 class="text-lg font-medium text-gray-900">Quality Assurance</h3>
+<p class="mt-2 text-sm text-gray-500">
+Rigorous quality control measures to ensure the highest standards of workmanship.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+Contact Us
+</h2>
+<p class="mt-4 text-lg text-gray-500">
+Get in touch for professional engineering solutions
+</p>
+</div>
+<div class="mt-12 max-w-lg mx-auto">
+<form id="contactForm" class="grid grid-cols-1 gap-6" onsubmit="handleSubmit(event)">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+<input type="text" name="name" id="name" required class="mt-1 block w-full border-gray-300 rounded-button shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+<input type="email" name="email" id="email" required class="mt-1 block w-full border-gray-300 rounded-button shadow-sm focus:ring-primary focus:border-primary sm:text-sm">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+<textarea id="message" name="message" rows="4" required class="mt-1 block w-full border-gray-300 rounded-button shadow-sm focus:ring-primary focus:border-primary sm:text-sm"></textarea>
+</div>
+<div>
+<button type="submit" id="submitBtn" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-button shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+<span id="submitText">Send Message</span>
+<span id="loadingIcon" class="hidden">
+<i class="ri-loader-4-line animate-spin ml-2"></i>
+</span>
+</button>
+</div>
+</form>
+<div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+<div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+<div class="flex items-center justify-center mb-4">
+<i class="ri-checkbox-circle-line text-green-500 text-4xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 text-center mb-2">Thank You!</h3>
+<p class="text-gray-600 text-center">Thank you for your message. We'll get back to you soon.</p>
+<button onclick="closeSuccessModal()" class="mt-6 w-full bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90">
+Close
+</button>
+</div>
+</div>
+<div id="errorModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+<div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+<div class="flex items-center justify-center mb-4">
+<i class="ri-error-warning-line text-red-500 text-4xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 text-center mb-2">Error</h3>
+<p class="text-gray-600 text-center">Sorry, something went wrong. Please try again later.</p>
+<button onclick="closeErrorModal()" class="mt-6 w-full bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90">
+Close
+</button>
+</div>
+</div>
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const loadingIcon = document.getElementById('loadingIcon');
+    const form = document.getElementById('contactForm');
+    
+    if (!form.checkValidity()) {
+        return;
+    }
+    
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending...';
+    loadingIcon.classList.remove('hidden');
+    
+    // Simulate API call
+    setTimeout(() => {
+        const success = Math.random() > 0.5; // Simulate success/failure
+        
+        if (success) {
+            document.getElementById('successModal').classList.remove('hidden');
+            form.reset();
+        } else {
+            document.getElementById('errorModal').classList.remove('hidden');
+        }
+        
+        submitBtn.disabled = false;
+        submitText.textContent = 'Send Message';
+        loadingIcon.classList.add('hidden');
+    }, 2000);
+}
+function closeSuccessModal() {
+    document.getElementById('successModal').classList.add('hidden');
+}
+function closeErrorModal() {
+    document.getElementById('errorModal').classList.add('hidden');
+}
+</script>
+</div>
+</div>
+</div>
+<footer class="bg-white">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-2">
+<div class="text-3xl font-medium text-primary mb-4">Parrow Engineering</div>
+<p class="text-gray-500 text-sm">
+Professional engineering solutions for all your mechanical needs. Quality service since 2002.
+</p>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact</h3>
+<ul class="mt-4 space-y-4">
+<li class="text-base text-gray-500">
+<i class="ri-phone-line mr-2"></i>
++267 3500263
+</li>
+<li class="text-base text-gray-500">
+<i class="ri-mail-line mr-2"></i>
+parrow@btcmail.co.bw
+</li>
+<li class="text-base text-gray-500">
+<i class="ri-map-pin-line mr-2"></i>
+<a href="https://www.google.com/maps/search/Parrow+Engineering/@-24.6802454,25.873661,13z?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" class="hover:text-primary">
+Plot 22082, Ditsotswane Road
+<br>
+<span class="ml-6">Gaborone West Industrial</span>
+<br>
+<span class="ml-6">Gaborone, Botswana</span>
+</a>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Working Hours</h3>
+<ul class="mt-4 space-y-4">
+<li class="text-base text-gray-500">Mon - Fri: 8:00 - 17:00</li>
+<li class="text-base text-gray-500">Sat: 8:00 - 12:00</li>
+<li class="text-base text-gray-500">Sun: Closed</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 border-t border-gray-200 pt-8">
+<p class="text-base text-gray-400 text-center">
+© 2025 Parrow Engineering (Pty) Ltd. All rights reserved.
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
